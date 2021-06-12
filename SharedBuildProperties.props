@@ -1,0 +1,23 @@
+<Project DefaultTargets="Build"
+         xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <Product>Bonfidanet</Product>
+        <Version>0.1.0</Version>
+        <Copyright>Copyright 2021 &#169; blockmountain</Copyright>
+        <Authors>Tiago Carvalho &amp; Hugo Carvalho</Authors>
+        <PublisherName>blockmountain</PublisherName>
+        <RepositoryUrl>https://github.com/bmresearch/Bonfidanet</RepositoryUrl>
+        <GenerateDocumentationFile>true</GenerateDocumentationFile>
+        <LangVersion>latest</LangVersion>
+        <PackageLicenseExpression>MIT</PackageLicenseExpression>
+        <PackageIcon>icon.png</PackageIcon>
+        <PackageDescription>Bonfidanet is a .NET library to interface with the Bonfida API.</PackageDescription>
+        <PackageTags>solana;serum;sol;net5</PackageTags>
+        <PackageReleaseNotes>https://github.com/bmresearch/Bonfidanet/releases</PackageReleaseNotes>
+        <RepositoryType>git</RepositoryType>
+    </PropertyGroup>
+
+    <ItemGroup Label="PackageIcon">
+        <None Include="$(MSBuildThisFileDirectory)/assets/icon.png" Pack="true" Visible="false" PackagePath=""/>
+    </ItemGroup>
+</Project>

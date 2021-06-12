@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bonfidanet.Client", "src\Bonfidanet.Client\Bonfidanet.Client.csproj", "{155A6DD0-6109-4248-BAA3-39806987DB6B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bonfidanet.Examples", "src\Bonfidanet.Examples\Bonfidanet.Examples.csproj", "{445A41F0-F9DE-4E6B-9301-902927983AFE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bonfidanet.Client.Test", "test\Bonfidanet.Client.Test\Bonfidanet.Client.Test.csproj", "{882C168E-455C-458A-91CB-F4785A3B73C4}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{155A6DD0-6109-4248-BAA3-39806987DB6B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{155A6DD0-6109-4248-BAA3-39806987DB6B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{155A6DD0-6109-4248-BAA3-39806987DB6B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{155A6DD0-6109-4248-BAA3-39806987DB6B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{445A41F0-F9DE-4E6B-9301-902927983AFE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{445A41F0-F9DE-4E6B-9301-902927983AFE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{445A41F0-F9DE-4E6B-9301-902927983AFE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{445A41F0-F9DE-4E6B-9301-902927983AFE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{882C168E-455C-458A-91CB-F4785A3B73C4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{882C168E-455C-458A-91CB-F4785A3B73C4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{882C168E-455C-458A-91CB-F4785A3B73C4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{882C168E-455C-458A-91CB-F4785A3B73C4}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal

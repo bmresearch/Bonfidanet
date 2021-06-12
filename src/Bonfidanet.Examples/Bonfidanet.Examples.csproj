@@ -1,0 +1,14 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net5.0</TargetFramework>
+        <OutputType>Exe</OutputType>
+        <AssemblyName>Bonfidanet.Examples</AssemblyName>
+        <RootNamespace>Bonfidanet.Examples</RootNamespace>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\Bonfidanet.Client\Bonfidanet.Client.csproj" />
+    </ItemGroup>
+
+</Project>

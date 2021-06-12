@@ -1,0 +1,13 @@
+{
+  "success": true,
+  "data": [
+    "ALEPH/USDT",
+    "ALEPH/WUSDC",
+    "BTC/USDT",
+    "BTC/WUSDC",
+    "ETH/USDT",
+    "ETH/WUSDC",
+    "SOL/USDT",
+    "SOL/WUSDC"
+  ]
+}
