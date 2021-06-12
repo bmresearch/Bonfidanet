@@ -48,9 +48,7 @@ jobs:
         condition: eq(variables.isMaster, true)
         inputs:
           gitHubConnection: 'bmresearch_hugo'
-          repositoryName: bmresearch/Solnet
+          repositoryName: bmresearch/Bonfidanet
           tagSource: manual
           tag: ${{ parameters.tag }}
           assets: 'artifacts/packages/*.nupkg'
-          changeLogCompareToRelease: 'lastFullRelease'
-          changeLogType: 'commitBased'
