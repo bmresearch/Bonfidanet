@@ -5,6 +5,7 @@
         <OutputType>Exe</OutputType>
         <AssemblyName>Bonfidanet.Examples</AssemblyName>
         <RootNamespace>Bonfidanet.Examples</RootNamespace>
+        <IsPackable>false</IsPackable>
     </PropertyGroup>
 
     <ItemGroup>

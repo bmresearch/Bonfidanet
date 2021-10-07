@@ -57,7 +57,7 @@ Task("Test")
             ArgumentCustomization = args => args.Append($"--logger trx")
         };
 
-        DotNetCoreTest("./test/Bonfidanet.Client.Test/Bonfidanet.Client.Test.csproj", testSettings, coverletSettings);
+        DotNetCoreTest("./Bonfidanet.Client.Test/Bonfidanet.Client.Test.csproj", testSettings, coverletSettings);
     });
 
 
@@ -99,7 +99,7 @@ Task("Pack")
         };
 
 
-        GetFiles("./src/*/*.csproj")
+        GetFiles("./*/*.csproj")
             .ToList()
             .ForEach(f => DotNetCorePack(f.FullPath, settings));
     });
