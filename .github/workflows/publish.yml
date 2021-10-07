@@ -46,6 +46,6 @@ jobs:
         uses: svenstaro/upload-release-action@v2
         with:
           repo_token: ${{ secrets.ACCESS_TOKEN }}
-          file: Bonfidanet.Client/bin/Release/net5.0/ref/Solnet.Serum.dll
+          file: Bonfidanet.Client/bin/Release/net5.0/ref/Bonfidanet.Client.dll
           tag: ${{ steps.publish_nuget.outputs.VERSION }}
           upload_url: ${{ steps.create_release.outputs.upload_url }}
