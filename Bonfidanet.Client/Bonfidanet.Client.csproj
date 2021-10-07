@@ -4,6 +4,7 @@
         <TargetFramework>net5.0</TargetFramework>
         <AssemblyName>Bonfidanet.Client</AssemblyName>
         <RootNamespace>Bonfidanet.Client</RootNamespace>
+        <IsPackable>true</IsPackable>
     </PropertyGroup>
 
     <ItemGroup>
@@ -14,4 +15,5 @@
         <PackageReference Include="Microsoft.Extensions.Logging.Console" Version="5.0.0" />
     </ItemGroup>
 
+    <Import Project="..\SharedBuildProperties.props" />
 </Project>

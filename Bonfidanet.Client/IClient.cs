@@ -56,6 +56,5 @@ namespace Bonfida.Client
         Task<RequestResult<OrderBook>> GetOrderBookAsync(string marketName);
         /// <inheritdoc cref="GetOrderBookAsync"/>
         RequestResult<OrderBook> GetOrderBook(string marketName);
-
     }
 }
