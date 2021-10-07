@@ -12,7 +12,7 @@
         <PackageLicenseExpression>MIT</PackageLicenseExpression>
         <PackageIcon>icon.png</PackageIcon>
         <PackageDescription>Bonfidanet is a .NET library to interface with the Bonfida API.</PackageDescription>
-        <PackageTags>solana;serum;sol;net5</PackageTags>
+        <PackageTags>solana;serum;sol;bonfida;net5</PackageTags>
         <PackageReleaseNotes>https://github.com/bmresearch/Bonfidanet/releases</PackageReleaseNotes>
         <RepositoryType>git</RepositoryType>
     </PropertyGroup>

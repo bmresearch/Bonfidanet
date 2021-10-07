@@ -24,6 +24,7 @@
 
     <ItemGroup>
         <ProjectReference Include="..\..\src\Bonfidanet.Client\Bonfidanet.Client.csproj" />
+        <ProjectReference Include="..\Bonfidanet.Client\Bonfidanet.Client.csproj" />
     </ItemGroup>
 
     <ItemGroup>
