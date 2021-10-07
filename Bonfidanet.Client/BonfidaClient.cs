@@ -100,9 +100,16 @@ namespace Bonfida.Client
         /// <returns>The task which returns the <see cref="RequestResult{T}"/>.</returns>
         private async Task<RequestResult<T>> HandleResponse<T>(HttpResponseMessage message)
         {
-            var data = await message.Content.ReadAsStringAsync();
+            if (!message.IsSuccessStatusCode)
+                return new RequestResult<T>(message);
+
+            string data = await message.Content.ReadAsStringAsync();
             _logger?.LogInformation(new EventId(0, "REC"), $"Result: {data}");
-            return JsonSerializer.Deserialize<RequestResult<T>>(data, _jsonSerializerOptions);
+            RequestResponse<T> obj = JsonSerializer.Deserialize<RequestResponse<T>>(data, _jsonSerializerOptions);
+            if (obj == null)
+                return new RequestResult<T>(message);
+            
+            return new RequestResult<T>(message, obj.Data);
         }
         
         /// <summary>
