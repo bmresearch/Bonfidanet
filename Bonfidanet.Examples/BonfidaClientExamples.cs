@@ -1,5 +1,7 @@
 ﻿using System;
 using Bonfida.Client;
+using System.Net;
+using System.Threading.Tasks;
 
 namespace Bonfida.Examples
 {
@@ -7,7 +9,7 @@ namespace Bonfida.Examples
     {
         private static readonly IClient BonfidaClient = ClientFactory.GetClient();
         
-        static void Examples(string[] args)
+        static void Main(string[] args)
         {
             /* Get All Market Pairs */
             //GetAllPairs();
@@ -22,7 +24,7 @@ namespace Bonfida.Examples
             //GetAllRecentTrades();
             
             /* Get Volume for ETH/USDT */
-            //GetVolume("ETHUSDT");
+            GetVolume("ETHUSDT");
             
             /* Get OrderBook for ETH/USDT */
             //GetOrderBook("ETHUSDT");
@@ -66,8 +68,18 @@ namespace Bonfida.Examples
         
         private static void GetVolume(string marketName)
         {
-            var volumeData = BonfidaClient.GetVolume(marketName);
-            Console.WriteLine(volumeData);
+            while (true)
+            {
+                var volumeData = BonfidaClient.GetVolume("SOLUSDC");
+                if (volumeData.HttpStatusCode == HttpStatusCode.TooManyRequests)
+                {
+                    Console.WriteLine($"Rate Limited.");
+                    Task.Delay(30000).Wait();
+                    continue;
+                }
+                Console.WriteLine($"Volume {volumeData.Data[0].VolumeUsd}.");
+                Task.Delay(500).Wait();
+            }
         }
 
         private static void GetOrderBook(string marketName)

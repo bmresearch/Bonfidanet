@@ -9,7 +9,7 @@ namespace Bonfida.Examples
     {
         private static readonly IStreamingClient Client = ClientFactory.GetStreamingClient();
         
-        static void Main(string[] args)
+        static void Example(string[] args)
         {
             Client.SubscribeTrades(trade =>
             {
