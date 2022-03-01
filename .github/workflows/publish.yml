@@ -37,7 +37,7 @@ jobs:
         with:
           tag_name: ${{ steps.publish_nuget.outputs.VERSION }}
           release_name: ${{ steps.publish_nuget.outputs.VERSION }}
-          body: ${{ steps.build_changelog.outputs.changelog }}
+          body_path: RELEASE-NOTES.txt
         env:
           GITHUB_TOKEN: ${{ secrets.ACCESS_TOKEN }}
       - name: Upload release assets
