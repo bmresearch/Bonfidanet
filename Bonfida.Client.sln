@@ -1,10 +1,28 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bonfidanet.Client", "Bonfidanet.Client\Bonfidanet.Client.csproj", "{155A6DD0-6109-4248-BAA3-39806987DB6B}"
+# Visual Studio Version 17
+VisualStudioVersion = 17.1.32210.238
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Bonfidanet.Client", "Bonfidanet.Client\Bonfidanet.Client.csproj", "{155A6DD0-6109-4248-BAA3-39806987DB6B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bonfidanet.Examples", "Bonfidanet.Examples\Bonfidanet.Examples.csproj", "{445A41F0-F9DE-4E6B-9301-902927983AFE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Bonfidanet.Examples", "Bonfidanet.Examples\Bonfidanet.Examples.csproj", "{445A41F0-F9DE-4E6B-9301-902927983AFE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bonfidanet.Client.Test", "Bonfidanet.Client.Test\Bonfidanet.Client.Test.csproj", "{882C168E-455C-458A-91CB-F4785A3B73C4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Bonfidanet.Client.Test", "Bonfidanet.Client.Test\Bonfidanet.Client.Test.csproj", "{882C168E-455C-458A-91CB-F4785A3B73C4}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{CB379720-F5AE-482F-B576-C60685E64AAC}"
+	ProjectSection(SolutionItems) = preProject
+		build.cake = build.cake
+		build.ps1 = build.ps1
+		build.sh = build.sh
+		CHANGELOG.md = CHANGELOG.md
+		CODE_OF_CONDUCT.md = CODE_OF_CONDUCT.md
+		LICENSE = LICENSE
+		.github\workflows\publish.yml = .github\workflows\publish.yml
+		PULL_REQUEST_TEMPLATE.md = PULL_REQUEST_TEMPLATE.md
+		README.md = README.md
+		RELEASE-NOTES.txt = RELEASE-NOTES.txt
+		SharedBuildProperties.props = SharedBuildProperties.props
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -24,5 +42,11 @@ Global
 		{882C168E-455C-458A-91CB-F4785A3B73C4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{882C168E-455C-458A-91CB-F4785A3B73C4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{882C168E-455C-458A-91CB-F4785A3B73C4}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {46BDA31A-526E-40BB-B5C1-B25C56505A73}
 	EndGlobalSection
 EndGlobal
