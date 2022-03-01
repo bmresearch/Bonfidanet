@@ -1,17 +1,21 @@
 #module nuget:?package=Cake.DotNetTool.Module&version=0.4.0
 #addin nuget:?package=Cake.Coverlet&version=2.5.4
 #tool dotnet:?package=dotnet-reportgenerator-globaltool&version=4.8.7
+var testProjectsRelativePaths = new string[]
+{
+    "./Bonfidanet.Client.Test/Bonfidanet.Client.Test.csproj",
+};
 
 var target = Argument("target", "Pack");
 var configuration = Argument("configuration", "Release");
 var solutionFolder = "./";
 var artifactsDir = MakeAbsolute(Directory("artifacts"));
 
-var reportTypes = "HtmlInline_AzurePipelines";
+var reportTypes = "HtmlInline";
 var coverageFolder = "./code_coverage";
+var coverageFileName = "results.info";
 
-var coberturaFileName = "results";
-var coverageFilePath = Directory(coverageFolder) + File(coberturaFileName + ".cobertura.xml");
+var coverageFilePath = Directory(coverageFolder) + File(coverageFileName);
 var packagesDir = artifactsDir.Combine(Directory("packages"));
 
 
@@ -27,7 +31,6 @@ Task("Restore")
     });
 
 Task("Build")
-    .IsDependentOn("Clean")
     .IsDependentOn("Restore")
     .Does(() => {
         DotNetCoreBuild(solutionFolder, new DotNetCoreBuildSettings
@@ -45,8 +48,8 @@ Task("Test")
         var coverletSettings = new CoverletSettings {
             CollectCoverage = true,
             CoverletOutputDirectory = coverageFolder,
-            CoverletOutputFormat  = CoverletOutputFormat.cobertura,
-            CoverletOutputName = coberturaFileName
+            CoverletOutputName = coverageFileName,
+            CoverletOutputFormat = CoverletOutputFormat.lcov
         };
 
         var testSettings = new DotNetCoreTestSettings
@@ -54,10 +57,10 @@ Task("Test")
             NoRestore = true,
             Configuration = configuration,
             NoBuild = true,
-            ArgumentCustomization = args => args.Append($"--logger trx")
+            ArgumentCustomization = args => args.Append($"--logger trx"),
         };
 
-        DotNetCoreTest("./Bonfidanet.Client.Test/Bonfidanet.Client.Test.csproj", testSettings, coverletSettings);
+        DotNetCoreTest(testProjectsRelativePaths[0], testSettings, coverletSettings);
     });
 
 
@@ -95,13 +98,10 @@ Task("Pack")
             NoBuild = true,
             NoRestore = true,
             IncludeSymbols = true,
-            OutputDirectory = packagesDir,
+            OutputDirectory = packagesDir
         };
 
-
-        GetFiles("./*/*.csproj")
-            .ToList()
-            .ForEach(f => DotNetCorePack(f.FullPath, settings));
+        DotNetCorePack("./Bonfidanet.Client/", settings);
     });
 
 RunTarget(target);
